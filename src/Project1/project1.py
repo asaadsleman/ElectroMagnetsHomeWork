@@ -14,7 +14,7 @@ def electricFieldPartAa():
     
     
     fig, ax = plt.subplots()
-    q = ax.quiver(x, y, u, v)
+    ax.quiver(x, y, u, v)
     plt.show()
     
 
@@ -44,8 +44,36 @@ def elctricFieldPartAeQuiver():
     plt.show()
 
 
+def elctricFieldPartAeDisplaced(z, w):
+    x = z - 2
+    y = w - 8
+    theta = np.arctan2(y, x)
+
+    try:
+        baseVal = 144 / (x ** 2 + y ** 2)
+    except ZeroDivisionError:
+        baseVal = 0
+
+    xVal = baseVal * np.cos(theta)
+    yVal = baseVal * np.sin(theta)
+
+    return (xVal, yVal)
+
+
+def elctricFieldPartAeQuiverDisplaced():
+    x, y = np.meshgrid(np.arange(1, 3, 0.08), np.arange(7, 9, 0.08))
+    u, v = elctricFieldPartAeDisplaced(x, y)
+    fig, ax = plt.subplots()
+    ax.quiver(x, y, u, v)
+
+    pot = 144 / (((x-2) ** 2 + (y-8) ** 2) ** 0.5)
+    ax.contour(x, y, pot)
+
+    plt.show()
+
 #electricFieldPartAa()
 elctricFieldPartAeQuiver()
+elctricFieldPartAeQuiverDisplaced()
 #elctricFieldPartAHeQuiver()
 
 
