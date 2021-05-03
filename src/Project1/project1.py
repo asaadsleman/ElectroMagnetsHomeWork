@@ -5,14 +5,8 @@ import numpy as np
 def electricFieldPartAa():
     a, b = 2, 8
     x, y = np.meshgrid(np.arange(-10, 10, 1), np.arange(-10, 10, 1))
-    
-    if (a + b) % 2 == 0:
-        u, v = 0, (a+b)
-    else:
-        u = (a*b*x)/(pow(x, 2) + pow(y, 2))
-        v = (a*b*y)/(pow(x, 2) + pow(y, 2))
-    
-    
+    u, v = 0, (a+b)
+
     fig, ax = plt.subplots()
     ax.quiver(x, y, u, v)
     plt.show()
@@ -71,10 +65,11 @@ def elctricFieldPartAeQuiverDisplaced():
 
     plt.show()
 
-#electricFieldPartAa()
+
+electricFieldPartAa()
 elctricFieldPartAeQuiver()
 elctricFieldPartAeQuiverDisplaced()
-#elctricFieldPartAHeQuiver()
+
 
 
 #~~~~~Part B~~~~~
