@@ -19,7 +19,7 @@ plt.show()
 
 def elctricFieldInD(x,y):
     if (x==0 and y==0):
-        pass
+        return (0, 0)
     else:
         if x==0:
             theta = 90
@@ -35,4 +35,11 @@ def elctricFieldInD(x,y):
 #z = (a+b)*y;
 #v,u = np.gradient(z)
 
+def ElectricFieldQuiverB():
+    x, y = np.meshgrid(np.arange(-10, 10, .2), np.arange(-10, 10, .2))
+    r = ((x ** 2 + y ** 2)**0.5)
+    fig, ax = plt.subplots()
+    q = ax.quiver(x, y, x/(r**3), y/(r**3))
+    plt.show()
 
+#Part B
