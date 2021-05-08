@@ -63,9 +63,27 @@ def ElectricFieldQuiverForDipole():
     u, v = electricFieldOfDipole(x, y, 0, -d/2, 0, d/2)
     fig, ax = plt.subplots()
     ax.quiver(x, y, u, v,scale=pow(10,16))
+    
     plt.show()
 
 
+def ElectricPotentialOfPointCharge(r):
+    return  (144.0 / r)
+    
+
+def plotOfPotentials():
+    x = np.linspace(0,10,100)
+    y = ElectricPotentialOfPointCharge(x)
+    
+    plt.plot(x, y)
+    plt.show()
+    
+    
+    
+    
+    
+    
+    
 
 def runPartA():
     electricFieldConstant()
@@ -74,6 +92,7 @@ def runPartA():
 
 def runPartB():
     ElectricFieldQuiverForDipole()
+    plotOfPotentials()
     
 runPartA()
 runPartB()
