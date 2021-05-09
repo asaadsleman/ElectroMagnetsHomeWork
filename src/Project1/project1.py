@@ -133,6 +133,24 @@ def ElectricFieldQuiverForMirrorCharges():
     plt.show()
     
     
+def ElectricPotentialCalculator(y):
+    eps0 = 8.845e-12
+    z = np.gradient(ElectricFieldForMirrorCharges(0, y))
+    sum = 0
+    for i in range(len(z)):
+        z[i] = z[i] * eps0
+        sum+=z[i]
+    return sum
+
+
+def ElectricFieldPlotForDensity():
+
+    x, y = np.linspace(0, 3*d, 100), np.linspace(0,3*d,100)
+    u = ElectricPotentialCalculator(x)
+    plt.plot(x, y, u)
+
+    plt.show()
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def runPartA():
@@ -145,7 +163,8 @@ def runPartB():
     plotOfPotentials()
     
 def runPartC():
-    ElectricFieldQuiverForMirrorCharges()
+    #ElectricFieldQuiverForMirrorCharges()
+    ElectricFieldPlotForDensity()
 
 #runPartA()
 #runPartB()

@@ -22,7 +22,6 @@
     <list default="true" id="5833f5b9-30c1-4d2c-86c5-fe023fbcaf06" name="Default Changelist" comment="practice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Project1/project1.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project1/project1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project1/שדות - מטלה 1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project1/שדות - מטלה 1.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +110,7 @@
       <workItem from="1619540628636" duration="3335000" />
       <workItem from="1619614123373" duration="581000" />
       <workItem from="1620039967678" duration="3011000" />
+      <workItem from="1620569054687" duration="1416000" />
     </task>
     <task id="LOCAL-00001" summary="practice">
       <created>1619615889667</created>
