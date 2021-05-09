@@ -4,6 +4,9 @@ import numpy as np
 global d
 d = 2*pow(10,-6)
 
+global kq
+kq = 144.0
+
 #~~~~~Part A~~~~~
 def electricFieldConstant():
     x, y = np.meshgrid(np.arange(-10, 10, 1), np.arange(-10, 10, 1))
@@ -20,7 +23,7 @@ def elctricFieldOfPointCharge(x, y, a=0, b=0):
     theta = np.arctan2(y, x)
 
     try:
-        baseVal = 144 / (x ** 2 + y ** 2)
+        baseVal = kq / (x ** 2 + y ** 2)
     except ZeroDivisionError:
         baseVal = 0
 
@@ -36,7 +39,7 @@ def electricFieldQuiverForPointCharge(a=0, b=0):
     fig, ax = plt.subplots()
     ax.quiver(x, y, u, v)
 
-    pot = 144 / (((x-a) ** 2 + (y-b) ** 2) ** 0.5)
+    pot = kq / (((x-a) ** 2 + (y-b) ** 2) ** 0.5)
     ax.contour(x, y, pot)
 
     plt.show()
@@ -77,12 +80,12 @@ def ElectricPotentialOfDipole(r, x=0):
     w1 = 1/(x**2+(r+d/2)**2)
     w2 = 1/(x**2+(r-d/2)**2)
     w = w1-w2
-    return 144*w
+    return kq*w
 
 
 def ElectricPotentialOfPointCharge(r):
     try:
-        return  (144.0 / np.abs(r))
+        return  (kq / np.abs(r))
     
     except ZeroDivisionError():
         return 1000
@@ -101,18 +104,49 @@ def plotOfPotentials():
     
     
     
+#~~~~~Part C~~~~~
+def ElectricFieldForMirrorCharges(x,y):
+    w1 = x-d
+    w2 = y-d
+    w3 = x+d
+    w4 = y+d
+
+    r1 = pow((w1**2)+(w2**2),3/2)
+    r2 = pow((w1**2)+(w4**2),3/2)
+    r3 = pow((w3**2)+(w4**2),3/2)
+    r4 = pow((w3**2)+(w2**2),3/2)
+
+    sizeX = (w1/r1)-(w1/r2)+(w3/r3)-(w3/r4)
+    sizeY = (w2/r1)-(w4/r2)+(w4/r3)-(w2/r4)
+
+    return (kq*sizeX,kq*sizeY)
+
+
+def ElectricFieldQuiverForMirrorCharges():
+    jump = d/15
     
+    x, y = np.meshgrid(np.arange(0, 3*d, jump), np.arange(0, 3*d, jump))
+    u, v = ElectricFieldForMirrorCharges(x, y)
+    fig, ax = plt.subplots()
+    ax.quiver(x, y, u, v)
+    
+    plt.show()
     
     
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def runPartA():
     electricFieldConstant()
     electricFieldQuiverForPointCharge()
     electricFieldQuiverForPointCharge(2,8)
 
 def runPartB():
-    #ElectricFieldQuiverForDipole()
+    ElectricFieldQuiverForDipole()
     plotOfPotentials()
     
+def runPartC():
+    ElectricFieldQuiverForMirrorCharges()
+
 #runPartA()
-runPartB()
+#runPartB()
+runPartC()
