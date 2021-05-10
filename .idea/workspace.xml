@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5833f5b9-30c1-4d2c-86c5-fe023fbcaf06" name="Default Changelist" comment="practice">
+    <list default="true" id="5833f5b9-30c1-4d2c-86c5-fe023fbcaf06" name="Default Changelist" comment="Part C trial">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Project1/project1.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project1/project1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Project1/שדות - מטלה 1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project1/שדות - מטלה 1.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +111,8 @@
       <workItem from="1619540628636" duration="3335000" />
       <workItem from="1619614123373" duration="581000" />
       <workItem from="1620039967678" duration="3011000" />
-      <workItem from="1620569054687" duration="1416000" />
+      <workItem from="1620569054687" duration="2806000" />
+      <workItem from="1620653811198" duration="1764000" />
     </task>
     <task id="LOCAL-00001" summary="practice">
       <created>1619615889667</created>
@@ -119,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619615889667</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Part C trial">
+      <created>1620570486273</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620570486273</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +148,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="practice" />
-    <option name="LAST_COMMIT_MESSAGE" value="practice" />
+    <MESSAGE value="Part C trial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part C trial" />
   </component>
   <component name="WindowStateProjectService">
     <state x="95" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619540723575">

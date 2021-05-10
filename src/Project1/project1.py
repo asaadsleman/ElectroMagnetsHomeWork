@@ -14,6 +14,9 @@ def electricFieldConstant():
 
     fig, ax = plt.subplots()
     ax.quiver(x, y, u, v)
+    ax.set_title("Constant Electric Field")
+    ax.set_xlabel("x[m]")
+    ax.set_ylabel("y[m]")
     plt.show()
     
 
@@ -38,6 +41,9 @@ def electricFieldQuiverForPointCharge(a=0, b=0):
     u, v = elctricFieldOfPointCharge(x, y, a, b)
     fig, ax = plt.subplots()
     ax.quiver(x, y, u, v)
+    ax.set_title("point charge field")
+    ax.set_xlabel("x[m]")
+    ax.set_ylabel("y[m]")
 
     pot = kq / (((x-a) ** 2 + (y-b) ** 2) ** 0.5)
     ax.contour(x, y, pot)
@@ -67,8 +73,10 @@ def ElectricFieldQuiverForDipole():
     x, y = np.meshgrid(np.arange(-2*d, 2*d, jump), np.arange(-2*d, 2*d, jump))
     u, v = electricFieldOfDipole(x, y, 0, -d/2, 0, d/2)
     fig, ax = plt.subplots()
-    ax.quiver(x, y, u, v,scale=pow(10,16))
-    
+    ax.quiver(x, y, u, v, scale=pow(10,16))
+    ax.set_title("Dipole Field")
+    ax.set_xlabel("x[m]")
+    ax.set_ylabel("y[m]")
 
     pot = ElectricPotentialOfDipole(y,x)
     ax.contour(x, y, pot)
@@ -95,9 +103,12 @@ def plotOfPotentials():
     x = np.linspace(-10,10,100)
     y1 = ElectricPotentialOfPointCharge(x)
     y2 = ElectricPotentialOfDipole(x)
-    
+    fig, ax = plt.subplots()
     plt.plot(x, y1, label="Point charge")
     plt.plot(x, y2, label="Dipole")
+    ax.set_title("Potentials Plot")
+    ax.set_xlabel("r[m]")
+    ax.set_ylabel("Phi(y)[J/C]")
     plt.legend()
     plt.show()
     
@@ -129,6 +140,9 @@ def ElectricFieldQuiverForMirrorCharges():
     u, v = ElectricFieldForMirrorCharges(x, y)
     fig, ax = plt.subplots()
     ax.quiver(x, y, u, v)
+    ax.set_title("Mirror Charges Field")
+    ax.set_xlabel("x[m]")
+    ax.set_ylabel("y[m]")
     
     plt.show()
     
@@ -148,8 +162,7 @@ def ElectricPotentialCalculator(y):
 def ElectricFieldPlotForDensity():
     x = np.linspace(0,6*d,100) #Values for y    
     y = ElectricPotentialCalculator(x)
-    plt.plot(x, y)
-
+    plt.plot(('Y[m]', x), ('Density[c*m^-3]', y))
     plt.show()
 
 
@@ -166,9 +179,9 @@ def runPartB():
     plotOfPotentials()
     
 def runPartC():
-    #ElectricFieldQuiverForMirrorCharges()
+    ElectricFieldQuiverForMirrorCharges()
     ElectricFieldPlotForDensity()
 
-#runPartA()
-#runPartB()
+runPartA()
+runPartB()
 runPartC()
